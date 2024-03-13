@@ -1,0 +1,30 @@
+{% extends 'gas_utility/home.html' %}
+{% block content %}
+<div class="container mt-4">
+        <div class="row justify-content-center my-5">
+            <div class="col-md-12">
+    <h2>Request Status</h2>
+    <table  class="table table-striped">
+        <thead>
+            <tr>
+                <th>Request Type</th>
+                <th>Status</th>
+                <th>Date Submitted</th>
+                <th>Date Resolved</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            {% for service_request in service_requests %}
+            <tr>
+                <td>{{ service_request.request_type }}</td>
+                <td>{{ service_request.status }}</td>
+                <td>{{ service_request.date_submitted }}</td>
+                <td>{{ service_request.date_resolved }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+            </div>
+        </div>
+</div>
+{% endblock %}
